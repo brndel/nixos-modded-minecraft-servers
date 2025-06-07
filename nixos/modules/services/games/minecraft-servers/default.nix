@@ -143,7 +143,7 @@ in {
       wantedBy = ["multi-user.target"];
       after = ["network.target"];
 
-      path = with pkgs; [icfg.jvmPackage bash];
+      path = with pkgs; [icfg.jvmPackage bash] ++ icfg.serviceExtraPackages;
 
       environment = {
         JVMOPTS = icfg.jvmOptString;
